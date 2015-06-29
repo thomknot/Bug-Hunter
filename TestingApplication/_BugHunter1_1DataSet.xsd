@@ -1,0 +1,715 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="_BugHunter1_1DataSet" targetNamespace="http://tempuri.org/_BugHunter1_1DataSet.xsd" xmlns:mstns="http://tempuri.org/_BugHunter1_1DataSet.xsd" xmlns="http://tempuri.org/_BugHunter1_1DataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="BugHunter1_1ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BugHunter1_1ConnectionString (Settings)" PropertyReference="ApplicationSettings.TestingApplication.Properties.Settings.GlobalReference.Default.BugHunter1_1ConnectionString" Provider="System.Data.OleDb" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="BugTableAdapter" GeneratorDataComponentClassName="BugTableAdapter" Name="Bug" UserDataComponentName="BugTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BugHunter1_1ConnectionString (Settings)" DbObjectName="Bug" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT BugID, BugVersion, TestCaseID, BugStatus, BuildNumber, BugDescription, StepsToReproduce, Severity, Priority, DeveloperID, DateReported, LastUpdate, ExpectedResults, ActualResults, Attachment, HyperLink, Comments, DateFixed, AdditionalInformation FROM Bug
+</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="BugID" DataSetColumn="BugID" />
+              <Mapping SourceColumn="BugVersion" DataSetColumn="BugVersion" />
+              <Mapping SourceColumn="TestCaseID" DataSetColumn="TestCaseID" />
+              <Mapping SourceColumn="BugStatus" DataSetColumn="BugStatus" />
+              <Mapping SourceColumn="BuildNumber" DataSetColumn="BuildNumber" />
+              <Mapping SourceColumn="BugDescription" DataSetColumn="BugDescription" />
+              <Mapping SourceColumn="StepsToReproduce" DataSetColumn="StepsToReproduce" />
+              <Mapping SourceColumn="Severity" DataSetColumn="Severity" />
+              <Mapping SourceColumn="Priority" DataSetColumn="Priority" />
+              <Mapping SourceColumn="DeveloperID" DataSetColumn="DeveloperID" />
+              <Mapping SourceColumn="DateReported" DataSetColumn="DateReported" />
+              <Mapping SourceColumn="LastUpdate" DataSetColumn="LastUpdate" />
+              <Mapping SourceColumn="ExpectedResults" DataSetColumn="ExpectedResults" />
+              <Mapping SourceColumn="ActualResults" DataSetColumn="ActualResults" />
+              <Mapping SourceColumn="Attachment" DataSetColumn="Attachment" />
+              <Mapping SourceColumn="HyperLink" DataSetColumn="HyperLink" />
+              <Mapping SourceColumn="Comments" DataSetColumn="Comments" />
+              <Mapping SourceColumn="DateFixed" DataSetColumn="DateFixed" />
+              <Mapping SourceColumn="AdditionalInformation" DataSetColumn="AdditionalInformation" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="BugHunter1_1ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy1" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT BugID, BugVersion, TestCaseID, BugStatus, BuildNumber, BugDescription, StepsToReproduce, Severity, Priority, DeveloperID, DateReported, LastUpdate, ExpectedResults, ActualResults, Attachment, HyperLink, 
+                  Comments, DateFixed, AdditionalInformation
+FROM     Bug
+WHERE  BugID =@BugID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="BugID" DataSourceName="" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="BugID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="BugID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="ProjectTableAdapter" GeneratorDataComponentClassName="ProjectTableAdapter" Name="Project" UserDataComponentName="ProjectTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BugHunter1_1ConnectionString (Settings)" DbObjectName="Project" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `Project` WHERE ((`ProjectID` = ?) AND ((? = 1 AND `ProjectName` IS NULL) OR (`ProjectName` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ProjectName" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ProjectName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ProjectName" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ProjectName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `Project` (`ProjectName`) VALUES (?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ProjectName" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ProjectName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT ProjectID, ProjectName FROM Project</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `Project` SET `ProjectName` = ? WHERE ((`ProjectID` = ?) AND ((? = 1 AND `ProjectName` IS NULL) OR (`ProjectName` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="ProjectName" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ProjectName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ProjectName" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ProjectName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_ProjectName" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="ProjectName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="ProjectID" DataSetColumn="ProjectID" />
+              <Mapping SourceColumn="ProjectName" DataSetColumn="ProjectName" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Sub_ProjectTableAdapter" GeneratorDataComponentClassName="Sub_ProjectTableAdapter" Name="Sub_Project" UserDataComponentName="Sub_ProjectTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BugHunter1_1ConnectionString (Settings)" DbObjectName="Sub_Project" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `Sub_Project` WHERE ((`SubProjectID` = ?) AND ((? = 1 AND `SubProjectName` IS NULL) OR (`SubProjectName` = ?)) AND ((? = 1 AND `ProjectID` IS NULL) OR (`ProjectID` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_SubProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="SubProjectID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_SubProjectName" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="SubProjectName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_SubProjectName" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="SubProjectName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `Sub_Project` (`SubProjectName`, `ProjectID`) VALUES (?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="SubProjectName" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="SubProjectName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT SubProjectID, SubProjectName, ProjectID FROM Sub_Project</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `Sub_Project` SET `SubProjectName` = ?, `ProjectID` = ? WHERE ((`SubProjectID` = ?) AND ((? = 1 AND `SubProjectName` IS NULL) OR (`SubProjectName` = ?)) AND ((? = 1 AND `ProjectID` IS NULL) OR (`ProjectID` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="SubProjectName" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="SubProjectName" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_SubProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="SubProjectID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_SubProjectName" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="SubProjectName" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_SubProjectName" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="SubProjectName" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="SubProjectID" DataSetColumn="SubProjectID" />
+              <Mapping SourceColumn="SubProjectName" DataSetColumn="SubProjectName" />
+              <Mapping SourceColumn="ProjectID" DataSetColumn="ProjectID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Test_CaseTableAdapter" GeneratorDataComponentClassName="Test_CaseTableAdapter" Name="Test_Case" UserDataComponentName="Test_CaseTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BugHunter1_1ConnectionString (Settings)" DbObjectName="Test_Case" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `Test_Case` WHERE ((`TestCaseID` = ?) AND ((? = 1 AND `TestCaseDescription` IS NULL) OR (`TestCaseDescription` = ?)) AND ((? = 1 AND `TestCaseSteps` IS NULL) OR (`TestCaseSteps` = ?)) AND ((? = 1 AND `UserRequirements` IS NULL) OR (`UserRequirements` = ?)) AND ((? = 1 AND `PlanStartDate` IS NULL) OR (`PlanStartDate` = ?)) AND ((? = 1 AND `PlanEndDate` IS NULL) OR (`PlanEndDate` = ?)) AND ((? = 1 AND `PlanHours` IS NULL) OR (`PlanHours` = ?)) AND ((? = 1 AND `ActualStartDate` IS NULL) OR (`ActualStartDate` = ?)) AND ((? = 1 AND `ActualEndDate` IS NULL) OR (`ActualEndDate` = ?)) AND ((? = 1 AND `LabourHours` IS NULL) OR (`LabourHours` = ?)) AND ((? = 1 AND `TesterID` IS NULL) OR (`TesterID` = ?)) AND ((? = 1 AND `TestStatus` IS NULL) OR (`TestStatus` = ?)) AND ((? = 1 AND `TestSuiteID` IS NULL) OR (`TestSuiteID` = ?)) AND ((? = 1 AND `SubProjectID` IS NULL) OR (`SubProjectID` = ?)) AND ((? = 1 AND `ProjectID` IS NULL) OR (`ProjectID` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TestCaseID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestCaseID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TestCaseDescription" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestCaseDescription" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TestCaseDescription" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TestCaseDescription" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TestCaseSteps" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestCaseSteps" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TestCaseSteps" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TestCaseSteps" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_UserRequirements" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="UserRequirements" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_UserRequirements" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="UserRequirements" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_PlanStartDate" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="PlanStartDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_PlanStartDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="PlanStartDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_PlanEndDate" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="PlanEndDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_PlanEndDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="PlanEndDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_PlanHours" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="PlanHours" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_PlanHours" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="PlanHours" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ActualStartDate" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ActualStartDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_ActualStartDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="ActualStartDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ActualEndDate" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ActualEndDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_ActualEndDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="ActualEndDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_LabourHours" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="LabourHours" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_LabourHours" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="LabourHours" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TesterID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TesterID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TesterID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TesterID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TestStatus" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestStatus" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TestStatus" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TestStatus" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TestSuiteID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestSuiteID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TestSuiteID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestSuiteID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_SubProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="SubProjectID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_SubProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="SubProjectID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `Test_Case` (`TestCaseDescription`, `TestCaseSteps`, `UserRequirements`, `PlanStartDate`, `PlanEndDate`, `PlanHours`, `ActualStartDate`, `ActualEndDate`, `LabourHours`, `TesterID`, `TestStatus`, `TestSuiteID`, `Comments`, `SubProjectID`, `ProjectID`) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TestCaseDescription" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TestCaseDescription" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TestCaseSteps" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TestCaseSteps" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="UserRequirements" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="UserRequirements" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="PlanStartDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="PlanStartDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="PlanEndDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="PlanEndDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="PlanHours" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="PlanHours" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="ActualStartDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="ActualStartDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="ActualEndDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="ActualEndDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="LabourHours" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="LabourHours" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="TesterID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TesterID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TestStatus" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TestStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="TestSuiteID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestSuiteID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Comments" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Comments" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="SubProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="SubProjectID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TestCaseID, TestCaseDescription, TestCaseSteps, UserRequirements, PlanStartDate, PlanEndDate, PlanHours, ActualStartDate, ActualEndDate, LabourHours, TesterID, TestStatus, TestSuiteID, Comments, SubProjectID, ProjectID FROM Test_Case</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `Test_Case` SET `TestCaseDescription` = ?, `TestCaseSteps` = ?, `UserRequirements` = ?, `PlanStartDate` = ?, `PlanEndDate` = ?, `PlanHours` = ?, `ActualStartDate` = ?, `ActualEndDate` = ?, `LabourHours` = ?, `TesterID` = ?, `TestStatus` = ?, `TestSuiteID` = ?, `Comments` = ?, `SubProjectID` = ?, `ProjectID` = ? WHERE ((`TestCaseID` = ?) AND ((? = 1 AND `TestCaseDescription` IS NULL) OR (`TestCaseDescription` = ?)) AND ((? = 1 AND `TestCaseSteps` IS NULL) OR (`TestCaseSteps` = ?)) AND ((? = 1 AND `UserRequirements` IS NULL) OR (`UserRequirements` = ?)) AND ((? = 1 AND `PlanStartDate` IS NULL) OR (`PlanStartDate` = ?)) AND ((? = 1 AND `PlanEndDate` IS NULL) OR (`PlanEndDate` = ?)) AND ((? = 1 AND `PlanHours` IS NULL) OR (`PlanHours` = ?)) AND ((? = 1 AND `ActualStartDate` IS NULL) OR (`ActualStartDate` = ?)) AND ((? = 1 AND `ActualEndDate` IS NULL) OR (`ActualEndDate` = ?)) AND ((? = 1 AND `LabourHours` IS NULL) OR (`LabourHours` = ?)) AND ((? = 1 AND `TesterID` IS NULL) OR (`TesterID` = ?)) AND ((? = 1 AND `TestStatus` IS NULL) OR (`TestStatus` = ?)) AND ((? = 1 AND `TestSuiteID` IS NULL) OR (`TestSuiteID` = ?)) AND ((? = 1 AND `SubProjectID` IS NULL) OR (`SubProjectID` = ?)) AND ((? = 1 AND `ProjectID` IS NULL) OR (`ProjectID` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TestCaseDescription" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TestCaseDescription" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TestCaseSteps" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TestCaseSteps" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="UserRequirements" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="UserRequirements" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="PlanStartDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="PlanStartDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="PlanEndDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="PlanEndDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="PlanHours" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="PlanHours" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="ActualStartDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="ActualStartDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="ActualEndDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="ActualEndDate" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="LabourHours" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="LabourHours" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="TesterID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TesterID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TestStatus" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TestStatus" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="TestSuiteID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestSuiteID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Comments" Precision="0" ProviderType="LongVarWChar" Scale="0" Size="0" SourceColumn="Comments" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="SubProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="SubProjectID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="ProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TestCaseID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestCaseID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TestCaseDescription" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestCaseDescription" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TestCaseDescription" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TestCaseDescription" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TestCaseSteps" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestCaseSteps" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TestCaseSteps" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TestCaseSteps" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_UserRequirements" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="UserRequirements" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_UserRequirements" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="UserRequirements" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_PlanStartDate" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="PlanStartDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_PlanStartDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="PlanStartDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_PlanEndDate" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="PlanEndDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_PlanEndDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="PlanEndDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_PlanHours" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="PlanHours" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_PlanHours" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="PlanHours" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ActualStartDate" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ActualStartDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_ActualStartDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="ActualStartDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ActualEndDate" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ActualEndDate" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="Original_ActualEndDate" Precision="0" ProviderType="Date" Scale="0" Size="0" SourceColumn="ActualEndDate" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_LabourHours" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="LabourHours" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_LabourHours" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="LabourHours" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TesterID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TesterID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TesterID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TesterID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TestStatus" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestStatus" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TestStatus" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TestStatus" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TestSuiteID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestSuiteID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TestSuiteID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestSuiteID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_SubProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="SubProjectID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_SubProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="SubProjectID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_ProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_ProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="ProjectID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TestCaseID" DataSetColumn="TestCaseID" />
+              <Mapping SourceColumn="TestCaseDescription" DataSetColumn="TestCaseDescription" />
+              <Mapping SourceColumn="TestCaseSteps" DataSetColumn="TestCaseSteps" />
+              <Mapping SourceColumn="UserRequirements" DataSetColumn="UserRequirements" />
+              <Mapping SourceColumn="PlanStartDate" DataSetColumn="PlanStartDate" />
+              <Mapping SourceColumn="PlanEndDate" DataSetColumn="PlanEndDate" />
+              <Mapping SourceColumn="PlanHours" DataSetColumn="PlanHours" />
+              <Mapping SourceColumn="ActualStartDate" DataSetColumn="ActualStartDate" />
+              <Mapping SourceColumn="ActualEndDate" DataSetColumn="ActualEndDate" />
+              <Mapping SourceColumn="LabourHours" DataSetColumn="LabourHours" />
+              <Mapping SourceColumn="TesterID" DataSetColumn="TesterID" />
+              <Mapping SourceColumn="TestStatus" DataSetColumn="TestStatus" />
+              <Mapping SourceColumn="TestSuiteID" DataSetColumn="TestSuiteID" />
+              <Mapping SourceColumn="Comments" DataSetColumn="Comments" />
+              <Mapping SourceColumn="SubProjectID" DataSetColumn="SubProjectID" />
+              <Mapping SourceColumn="ProjectID" DataSetColumn="ProjectID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="BugHunter1_1ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy" GeneratorSourceName="FillBy" GetMethodModifier="Public" GetMethodName="GetDataBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT TestCaseID, TestCaseDescription, TestCaseSteps, UserRequirements, PlanStartDate, PlanEndDate, PlanHours, ActualStartDate, ActualEndDate, LabourHours, TesterID, TestStatus, TestSuiteID, Comments, 
+                  SubProjectID, ProjectID
+FROM     Test_Case
+WHERE  TestCaseID = @TestCaseID</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="Param1" ColumnName="TestCaseID" DataSourceName="" DataTypeServer="DbType.Int32" DbType="Int32" Direction="Input" ParameterName="TestCaseID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestCaseID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="Test_SuiteTableAdapter" GeneratorDataComponentClassName="Test_SuiteTableAdapter" Name="Test_Suite" UserDataComponentName="Test_SuiteTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BugHunter1_1ConnectionString (Settings)" DbObjectName="Test_Suite" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <DeleteCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>DELETE FROM `Test_Suite` WHERE ((`TestSuiteID` = ?) AND ((? = 1 AND `TestSuiteDescription` IS NULL) OR (`TestSuiteDescription` = ?)) AND ((? = 1 AND `TestCaseID` IS NULL) OR (`TestCaseID` = ?)) AND ((? = 1 AND `SubProjectID` IS NULL) OR (`SubProjectID` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TestSuiteID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestSuiteID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TestSuiteDescription" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestSuiteDescription" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TestSuiteDescription" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TestSuiteDescription" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TestCaseID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestCaseID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TestCaseID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestCaseID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_SubProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="SubProjectID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_SubProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="SubProjectID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </DeleteCommand>
+                <InsertCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>INSERT INTO `Test_Suite` (`TestSuiteDescription`, `TestCaseID`, `SubProjectID`) VALUES (?, ?, ?)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TestSuiteDescription" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TestSuiteDescription" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="TestCaseID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestCaseID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="SubProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="SubProjectID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </InsertCommand>
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT TestSuiteID, TestSuiteDescription, TestCaseID, SubProjectID FROM Test_Suite</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+                <UpdateCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>UPDATE `Test_Suite` SET `TestSuiteDescription` = ?, `TestCaseID` = ?, `SubProjectID` = ? WHERE ((`TestSuiteID` = ?) AND ((? = 1 AND `TestSuiteDescription` IS NULL) OR (`TestSuiteDescription` = ?)) AND ((? = 1 AND `TestCaseID` IS NULL) OR (`TestCaseID` = ?)) AND ((? = 1 AND `SubProjectID` IS NULL) OR (`SubProjectID` = ?)))</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="TestSuiteDescription" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TestSuiteDescription" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="TestCaseID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestCaseID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="SubProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="SubProjectID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TestSuiteID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestSuiteID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TestSuiteDescription" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestSuiteDescription" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="Original_TestSuiteDescription" Precision="0" ProviderType="VarWChar" Scale="0" Size="0" SourceColumn="TestSuiteDescription" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_TestCaseID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestCaseID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_TestCaseID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="TestCaseID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="IsNull_SubProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="SubProjectID" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="Original_SubProjectID" Precision="0" ProviderType="Integer" Scale="0" Size="0" SourceColumn="SubProjectID" SourceColumnNullMapping="false" SourceVersion="Original" />
+                    </Parameters>
+                  </DbCommand>
+                </UpdateCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="TestSuiteID" DataSetColumn="TestSuiteID" />
+              <Mapping SourceColumn="TestSuiteDescription" DataSetColumn="TestSuiteDescription" />
+              <Mapping SourceColumn="TestCaseID" DataSetColumn="TestCaseID" />
+              <Mapping SourceColumn="SubProjectID" DataSetColumn="SubProjectID" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="UserTableAdapter" GeneratorDataComponentClassName="UserTableAdapter" Name="User" UserDataComponentName="UserTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BugHunter1_1ConnectionString (Settings)" DbObjectName="[User]" DbObjectType="Table" GenerateMethods="Get" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="GetData">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT UserID, LoginID, LoginPassword, DesignationID, LastName, FirstName
+FROM     [User]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="UserID" DataSetColumn="UserID" />
+              <Mapping SourceColumn="LoginID" DataSetColumn="LoginID" />
+              <Mapping SourceColumn="LoginPassword" DataSetColumn="LoginPassword" />
+              <Mapping SourceColumn="DesignationID" DataSetColumn="DesignationID" />
+              <Mapping SourceColumn="LastName" DataSetColumn="LastName" />
+              <Mapping SourceColumn="FirstName" DataSetColumn="FirstName" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="BugHunter1_1ConnectionString (Settings)" DbObjectName="[User]" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="Fill" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DesignationID, FirstName, LastName, LoginID, LoginPassword, UserID FROM [User]</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="BugHunter1_1ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy11" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy1" GeneratorSourceName="FillBy11" GetMethodModifier="Public" GetMethodName="GetDataBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy11">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT DesignationID, FirstName, LastName, LoginID, LoginPassword, UserID FROM [User] WHERE (LoginID = @LoginID)</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="Param1" ColumnName="LoginID" DataSourceName="" DataTypeServer="DbType.StringFixedLength(15)" DbType="String" Direction="Input" ParameterName="LoginID" Precision="0" ProviderType="WChar" Scale="0" Size="15" SourceColumn="LoginID" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="BugHunter1_1ConnectionString (Settings)" DbObjectName="" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Login" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataBy2" GeneratorSourceName="Login" GetMethodModifier="Public" GetMethodName="GetDataBy2" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy2" UserSourceName="Login">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT  LoginID, LoginPassword, DesignationID,  FROM [User]
+WHERE loginID =@LoginID</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="_BugHunter1_1DataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="_BugHunter1_1DataSet" msprop:Generator_UserDSName="_BugHunter1_1DataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Bug" msprop:Generator_TableClassName="BugDataTable" msprop:Generator_TableVarName="tableBug" msprop:Generator_TablePropName="Bug" msprop:Generator_RowDeletingName="BugRowDeleting" msprop:Generator_RowChangingName="BugRowChanging" msprop:Generator_RowEvHandlerName="BugRowChangeEventHandler" msprop:Generator_RowDeletedName="BugRowDeleted" msprop:Generator_UserTableName="Bug" msprop:Generator_RowChangedName="BugRowChanged" msprop:Generator_RowEvArgName="BugRowChangeEvent" msprop:Generator_RowClassName="BugRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BugID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnBugID" msprop:Generator_ColumnPropNameInRow="BugID" msprop:Generator_ColumnPropNameInTable="BugIDColumn" msprop:Generator_UserColumnName="BugID" type="xs:int" />
+              <xs:element name="BugVersion" msprop:Generator_ColumnVarNameInTable="columnBugVersion" msprop:Generator_ColumnPropNameInRow="BugVersion" msprop:Generator_ColumnPropNameInTable="BugVersionColumn" msprop:Generator_UserColumnName="BugVersion" type="xs:double" minOccurs="0" />
+              <xs:element name="TestCaseID" msprop:Generator_ColumnVarNameInTable="columnTestCaseID" msprop:Generator_ColumnPropNameInRow="TestCaseID" msprop:Generator_ColumnPropNameInTable="TestCaseIDColumn" msprop:Generator_UserColumnName="TestCaseID" type="xs:int" minOccurs="0" />
+              <xs:element name="BugStatus" msprop:Generator_ColumnVarNameInTable="columnBugStatus" msprop:Generator_ColumnPropNameInRow="BugStatus" msprop:Generator_ColumnPropNameInTable="BugStatusColumn" msprop:Generator_UserColumnName="BugStatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BuildNumber" msprop:Generator_ColumnVarNameInTable="columnBuildNumber" msprop:Generator_ColumnPropNameInRow="BuildNumber" msprop:Generator_ColumnPropNameInTable="BuildNumberColumn" msprop:Generator_UserColumnName="BuildNumber" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="BugDescription" msprop:Generator_ColumnVarNameInTable="columnBugDescription" msprop:Generator_ColumnPropNameInRow="BugDescription" msprop:Generator_ColumnPropNameInTable="BugDescriptionColumn" msprop:Generator_UserColumnName="BugDescription" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="StepsToReproduce" msprop:Generator_ColumnVarNameInTable="columnStepsToReproduce" msprop:Generator_ColumnPropNameInRow="StepsToReproduce" msprop:Generator_ColumnPropNameInTable="StepsToReproduceColumn" msprop:Generator_UserColumnName="StepsToReproduce" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Severity" msprop:Generator_ColumnVarNameInTable="columnSeverity" msprop:Generator_ColumnPropNameInRow="Severity" msprop:Generator_ColumnPropNameInTable="SeverityColumn" msprop:Generator_UserColumnName="Severity" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Priority" msprop:Generator_ColumnVarNameInTable="columnPriority" msprop:Generator_ColumnPropNameInRow="Priority" msprop:Generator_ColumnPropNameInTable="PriorityColumn" msprop:Generator_UserColumnName="Priority" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DeveloperID" msprop:Generator_ColumnVarNameInTable="columnDeveloperID" msprop:Generator_ColumnPropNameInRow="DeveloperID" msprop:Generator_ColumnPropNameInTable="DeveloperIDColumn" msprop:Generator_UserColumnName="DeveloperID" type="xs:int" minOccurs="0" />
+              <xs:element name="DateReported" msprop:Generator_ColumnVarNameInTable="columnDateReported" msprop:Generator_ColumnPropNameInRow="DateReported" msprop:Generator_ColumnPropNameInTable="DateReportedColumn" msprop:Generator_UserColumnName="DateReported" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LastUpdate" msprop:Generator_ColumnVarNameInTable="columnLastUpdate" msprop:Generator_ColumnPropNameInRow="LastUpdate" msprop:Generator_ColumnPropNameInTable="LastUpdateColumn" msprop:Generator_UserColumnName="LastUpdate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ExpectedResults" msprop:Generator_ColumnVarNameInTable="columnExpectedResults" msprop:Generator_ColumnPropNameInRow="ExpectedResults" msprop:Generator_ColumnPropNameInTable="ExpectedResultsColumn" msprop:Generator_UserColumnName="ExpectedResults" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ActualResults" msprop:Generator_ColumnVarNameInTable="columnActualResults" msprop:Generator_ColumnPropNameInRow="ActualResults" msprop:Generator_ColumnPropNameInTable="ActualResultsColumn" msprop:Generator_UserColumnName="ActualResults" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Attachment" msprop:Generator_ColumnVarNameInTable="columnAttachment" msprop:Generator_ColumnPropNameInRow="Attachment" msprop:Generator_ColumnPropNameInTable="AttachmentColumn" msprop:Generator_UserColumnName="Attachment" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="HyperLink" msprop:Generator_ColumnVarNameInTable="columnHyperLink" msprop:Generator_ColumnPropNameInRow="HyperLink" msprop:Generator_ColumnPropNameInTable="HyperLinkColumn" msprop:Generator_UserColumnName="HyperLink" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Comments" msprop:Generator_ColumnVarNameInTable="columnComments" msprop:Generator_ColumnPropNameInRow="Comments" msprop:Generator_ColumnPropNameInTable="CommentsColumn" msprop:Generator_UserColumnName="Comments" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DateFixed" msprop:Generator_ColumnVarNameInTable="columnDateFixed" msprop:Generator_ColumnPropNameInRow="DateFixed" msprop:Generator_ColumnPropNameInTable="DateFixedColumn" msprop:Generator_UserColumnName="DateFixed" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="AdditionalInformation" msprop:Generator_ColumnVarNameInTable="columnAdditionalInformation" msprop:Generator_ColumnPropNameInRow="AdditionalInformation" msprop:Generator_ColumnPropNameInTable="AdditionalInformationColumn" msprop:Generator_UserColumnName="AdditionalInformation" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Project" msprop:Generator_TableClassName="ProjectDataTable" msprop:Generator_TableVarName="tableProject" msprop:Generator_TablePropName="Project" msprop:Generator_RowDeletingName="ProjectRowDeleting" msprop:Generator_RowChangingName="ProjectRowChanging" msprop:Generator_RowEvHandlerName="ProjectRowChangeEventHandler" msprop:Generator_RowDeletedName="ProjectRowDeleted" msprop:Generator_UserTableName="Project" msprop:Generator_RowChangedName="ProjectRowChanged" msprop:Generator_RowEvArgName="ProjectRowChangeEvent" msprop:Generator_RowClassName="ProjectRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="ProjectID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnProjectID" msprop:Generator_ColumnPropNameInRow="ProjectID" msprop:Generator_ColumnPropNameInTable="ProjectIDColumn" msprop:Generator_UserColumnName="ProjectID" type="xs:int" />
+              <xs:element name="ProjectName" msprop:Generator_ColumnVarNameInTable="columnProjectName" msprop:Generator_ColumnPropNameInRow="ProjectName" msprop:Generator_ColumnPropNameInTable="ProjectNameColumn" msprop:Generator_UserColumnName="ProjectName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Sub_Project" msprop:Generator_TableClassName="Sub_ProjectDataTable" msprop:Generator_TableVarName="tableSub_Project" msprop:Generator_TablePropName="Sub_Project" msprop:Generator_RowDeletingName="Sub_ProjectRowDeleting" msprop:Generator_RowChangingName="Sub_ProjectRowChanging" msprop:Generator_RowEvHandlerName="Sub_ProjectRowChangeEventHandler" msprop:Generator_RowDeletedName="Sub_ProjectRowDeleted" msprop:Generator_UserTableName="Sub_Project" msprop:Generator_RowChangedName="Sub_ProjectRowChanged" msprop:Generator_RowEvArgName="Sub_ProjectRowChangeEvent" msprop:Generator_RowClassName="Sub_ProjectRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="SubProjectID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnSubProjectID" msprop:Generator_ColumnPropNameInRow="SubProjectID" msprop:Generator_ColumnPropNameInTable="SubProjectIDColumn" msprop:Generator_UserColumnName="SubProjectID" type="xs:int" />
+              <xs:element name="SubProjectName" msprop:Generator_ColumnVarNameInTable="columnSubProjectName" msprop:Generator_ColumnPropNameInRow="SubProjectName" msprop:Generator_ColumnPropNameInTable="SubProjectNameColumn" msprop:Generator_UserColumnName="SubProjectName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ProjectID" msprop:Generator_ColumnVarNameInTable="columnProjectID" msprop:Generator_ColumnPropNameInRow="ProjectID" msprop:Generator_ColumnPropNameInTable="ProjectIDColumn" msprop:Generator_UserColumnName="ProjectID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Test_Case" msprop:Generator_TableClassName="Test_CaseDataTable" msprop:Generator_TableVarName="tableTest_Case" msprop:Generator_TablePropName="Test_Case" msprop:Generator_RowDeletingName="Test_CaseRowDeleting" msprop:Generator_RowChangingName="Test_CaseRowChanging" msprop:Generator_RowEvHandlerName="Test_CaseRowChangeEventHandler" msprop:Generator_RowDeletedName="Test_CaseRowDeleted" msprop:Generator_UserTableName="Test_Case" msprop:Generator_RowChangedName="Test_CaseRowChanged" msprop:Generator_RowEvArgName="Test_CaseRowChangeEvent" msprop:Generator_RowClassName="Test_CaseRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TestCaseID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTestCaseID" msprop:Generator_ColumnPropNameInRow="TestCaseID" msprop:Generator_ColumnPropNameInTable="TestCaseIDColumn" msprop:Generator_UserColumnName="TestCaseID" type="xs:int" />
+              <xs:element name="TestCaseDescription" msprop:Generator_ColumnVarNameInTable="columnTestCaseDescription" msprop:Generator_ColumnPropNameInRow="TestCaseDescription" msprop:Generator_ColumnPropNameInTable="TestCaseDescriptionColumn" msprop:Generator_UserColumnName="TestCaseDescription" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TestCaseSteps" msprop:Generator_ColumnVarNameInTable="columnTestCaseSteps" msprop:Generator_ColumnPropNameInRow="TestCaseSteps" msprop:Generator_ColumnPropNameInTable="TestCaseStepsColumn" msprop:Generator_UserColumnName="TestCaseSteps" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UserRequirements" msprop:Generator_ColumnVarNameInTable="columnUserRequirements" msprop:Generator_ColumnPropNameInRow="UserRequirements" msprop:Generator_ColumnPropNameInTable="UserRequirementsColumn" msprop:Generator_UserColumnName="UserRequirements" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlanStartDate" msprop:Generator_ColumnVarNameInTable="columnPlanStartDate" msprop:Generator_ColumnPropNameInRow="PlanStartDate" msprop:Generator_ColumnPropNameInTable="PlanStartDateColumn" msprop:Generator_UserColumnName="PlanStartDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PlanEndDate" msprop:Generator_ColumnVarNameInTable="columnPlanEndDate" msprop:Generator_ColumnPropNameInRow="PlanEndDate" msprop:Generator_ColumnPropNameInTable="PlanEndDateColumn" msprop:Generator_UserColumnName="PlanEndDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="PlanHours" msprop:Generator_ColumnVarNameInTable="columnPlanHours" msprop:Generator_ColumnPropNameInRow="PlanHours" msprop:Generator_ColumnPropNameInTable="PlanHoursColumn" msprop:Generator_UserColumnName="PlanHours" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ActualStartDate" msprop:Generator_ColumnVarNameInTable="columnActualStartDate" msprop:Generator_ColumnPropNameInRow="ActualStartDate" msprop:Generator_ColumnPropNameInTable="ActualStartDateColumn" msprop:Generator_UserColumnName="ActualStartDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ActualEndDate" msprop:Generator_ColumnVarNameInTable="columnActualEndDate" msprop:Generator_ColumnPropNameInRow="ActualEndDate" msprop:Generator_ColumnPropNameInTable="ActualEndDateColumn" msprop:Generator_UserColumnName="ActualEndDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="LabourHours" msprop:Generator_ColumnVarNameInTable="columnLabourHours" msprop:Generator_ColumnPropNameInRow="LabourHours" msprop:Generator_ColumnPropNameInTable="LabourHoursColumn" msprop:Generator_UserColumnName="LabourHours" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TesterID" msprop:Generator_ColumnVarNameInTable="columnTesterID" msprop:Generator_ColumnPropNameInRow="TesterID" msprop:Generator_ColumnPropNameInTable="TesterIDColumn" msprop:Generator_UserColumnName="TesterID" type="xs:int" minOccurs="0" />
+              <xs:element name="TestStatus" msprop:Generator_ColumnVarNameInTable="columnTestStatus" msprop:Generator_ColumnPropNameInRow="TestStatus" msprop:Generator_ColumnPropNameInTable="TestStatusColumn" msprop:Generator_UserColumnName="TestStatus" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TestSuiteID" msprop:Generator_ColumnVarNameInTable="columnTestSuiteID" msprop:Generator_ColumnPropNameInRow="TestSuiteID" msprop:Generator_ColumnPropNameInTable="TestSuiteIDColumn" msprop:Generator_UserColumnName="TestSuiteID" type="xs:int" minOccurs="0" />
+              <xs:element name="Comments" msprop:Generator_ColumnVarNameInTable="columnComments" msprop:Generator_ColumnPropNameInRow="Comments" msprop:Generator_ColumnPropNameInTable="CommentsColumn" msprop:Generator_UserColumnName="Comments" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="536870910" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SubProjectID" msprop:Generator_ColumnVarNameInTable="columnSubProjectID" msprop:Generator_ColumnPropNameInRow="SubProjectID" msprop:Generator_ColumnPropNameInTable="SubProjectIDColumn" msprop:Generator_UserColumnName="SubProjectID" type="xs:int" minOccurs="0" />
+              <xs:element name="ProjectID" msprop:Generator_ColumnVarNameInTable="columnProjectID" msprop:Generator_ColumnPropNameInRow="ProjectID" msprop:Generator_ColumnPropNameInTable="ProjectIDColumn" msprop:Generator_UserColumnName="ProjectID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="Test_Suite" msprop:Generator_TableClassName="Test_SuiteDataTable" msprop:Generator_TableVarName="tableTest_Suite" msprop:Generator_TablePropName="Test_Suite" msprop:Generator_RowDeletingName="Test_SuiteRowDeleting" msprop:Generator_RowChangingName="Test_SuiteRowChanging" msprop:Generator_RowEvHandlerName="Test_SuiteRowChangeEventHandler" msprop:Generator_RowDeletedName="Test_SuiteRowDeleted" msprop:Generator_UserTableName="Test_Suite" msprop:Generator_RowChangedName="Test_SuiteRowChanged" msprop:Generator_RowEvArgName="Test_SuiteRowChangeEvent" msprop:Generator_RowClassName="Test_SuiteRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="TestSuiteID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnTestSuiteID" msprop:Generator_ColumnPropNameInRow="TestSuiteID" msprop:Generator_ColumnPropNameInTable="TestSuiteIDColumn" msprop:Generator_UserColumnName="TestSuiteID" type="xs:int" />
+              <xs:element name="TestSuiteDescription" msprop:Generator_ColumnVarNameInTable="columnTestSuiteDescription" msprop:Generator_ColumnPropNameInRow="TestSuiteDescription" msprop:Generator_ColumnPropNameInTable="TestSuiteDescriptionColumn" msprop:Generator_UserColumnName="TestSuiteDescription" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="TestCaseID" msprop:Generator_ColumnVarNameInTable="columnTestCaseID" msprop:Generator_ColumnPropNameInRow="TestCaseID" msprop:Generator_ColumnPropNameInTable="TestCaseIDColumn" msprop:Generator_UserColumnName="TestCaseID" type="xs:int" minOccurs="0" />
+              <xs:element name="SubProjectID" msprop:Generator_ColumnVarNameInTable="columnSubProjectID" msprop:Generator_ColumnPropNameInRow="SubProjectID" msprop:Generator_ColumnPropNameInTable="SubProjectIDColumn" msprop:Generator_UserColumnName="SubProjectID" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="User" msprop:Generator_TableClassName="UserDataTable" msprop:Generator_TableVarName="tableUser" msprop:Generator_TablePropName="User" msprop:Generator_RowDeletingName="UserRowDeleting" msprop:Generator_RowChangingName="UserRowChanging" msprop:Generator_RowEvHandlerName="UserRowChangeEventHandler" msprop:Generator_RowDeletedName="UserRowDeleted" msprop:Generator_UserTableName="User" msprop:Generator_RowChangedName="UserRowChanged" msprop:Generator_RowEvArgName="UserRowChangeEvent" msprop:Generator_RowClassName="UserRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="UserID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnUserID" msprop:Generator_ColumnPropNameInRow="UserID" msprop:Generator_ColumnPropNameInTable="UserIDColumn" msprop:Generator_UserColumnName="UserID" type="xs:int" />
+              <xs:element name="LoginID" msprop:Generator_ColumnVarNameInTable="columnLoginID" msprop:Generator_ColumnPropNameInRow="LoginID" msprop:Generator_ColumnPropNameInTable="LoginIDColumn" msprop:Generator_UserColumnName="LoginID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LoginPassword" msprop:Generator_ColumnVarNameInTable="columnLoginPassword" msprop:Generator_ColumnPropNameInRow="LoginPassword" msprop:Generator_ColumnPropNameInTable="LoginPasswordColumn" msprop:Generator_UserColumnName="LoginPassword" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DesignationID" msprop:Generator_ColumnVarNameInTable="columnDesignationID" msprop:Generator_ColumnPropNameInRow="DesignationID" msprop:Generator_ColumnPropNameInTable="DesignationIDColumn" msprop:Generator_UserColumnName="DesignationID" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="LastName" msprop:Generator_ColumnVarNameInTable="columnLastName" msprop:Generator_ColumnPropNameInRow="LastName" msprop:Generator_ColumnPropNameInTable="LastNameColumn" msprop:Generator_UserColumnName="LastName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="FirstName" msprop:Generator_ColumnVarNameInTable="columnFirstName" msprop:Generator_ColumnPropNameInRow="FirstName" msprop:Generator_ColumnPropNameInTable="FirstNameColumn" msprop:Generator_UserColumnName="FirstName" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Bug" />
+      <xs:field xpath="mstns:BugID" />
+    </xs:unique>
+    <xs:unique name="Project_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Project" />
+      <xs:field xpath="mstns:ProjectID" />
+    </xs:unique>
+    <xs:unique name="Sub_Project_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Sub_Project" />
+      <xs:field xpath="mstns:SubProjectID" />
+    </xs:unique>
+    <xs:unique name="Test_Case_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Test_Case" />
+      <xs:field xpath="mstns:TestCaseID" />
+    </xs:unique>
+    <xs:unique name="Test_Suite_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:Test_Suite" />
+      <xs:field xpath="mstns:TestSuiteID" />
+    </xs:unique>
+    <xs:unique name="User_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:User" />
+      <xs:field xpath="mstns:UserID" />
+    </xs:unique>
+  </xs:element>
+  <xs:annotation>
+    <xs:appinfo>
+      <msdata:Relationship name="UserTBugT" msdata:parent="User" msdata:child="Bug" msdata:parentkey="UserID" msdata:childkey="DeveloperID" msprop:Generator_UserChildTable="Bug" msprop:Generator_ChildPropName="GetBugRows" msprop:Generator_UserRelationName="UserTBugT" msprop:Generator_RelationVarName="relationUserTBugT" msprop:Generator_UserParentTable="User" msprop:Generator_ParentPropName="UserRow" />
+      <msdata:Relationship name="ProjectSub_Project" msdata:parent="Project" msdata:child="Sub_Project" msdata:parentkey="ProjectID" msdata:childkey="ProjectID" msprop:Generator_UserChildTable="Sub_Project" msprop:Generator_ChildPropName="GetSub_ProjectRows" msprop:Generator_UserRelationName="ProjectSub_Project" msprop:Generator_ParentPropName="ProjectRow" msprop:Generator_RelationVarName="relationProjectSub_Project" msprop:Generator_UserParentTable="Project" />
+      <msdata:Relationship name="Test_SuiteTest_Data" msdata:parent="Test_Suite" msdata:child="Test_Case" msdata:parentkey="TestSuiteID" msdata:childkey="TestSuiteID" msprop:Generator_UserChildTable="Test_Case" msprop:Generator_ChildPropName="GetTest_CaseRows" msprop:Generator_UserRelationName="Test_SuiteTest_Data" msprop:Generator_RelationVarName="relationTest_SuiteTest_Data" msprop:Generator_UserParentTable="Test_Suite" msprop:Generator_ParentPropName="Test_SuiteRow" />
+      <msdata:Relationship name="UserTest_Data" msdata:parent="User" msdata:child="Test_Case" msdata:parentkey="UserID" msdata:childkey="TesterID" msprop:Generator_UserChildTable="Test_Case" msprop:Generator_ChildPropName="GetTest_CaseRows" msprop:Generator_UserRelationName="UserTest_Data" msprop:Generator_RelationVarName="relationUserTest_Data" msprop:Generator_UserParentTable="User" msprop:Generator_ParentPropName="UserRow" />
+      <msdata:Relationship name="Sub_ProjectTest_Suite" msdata:parent="Sub_Project" msdata:child="Test_Suite" msdata:parentkey="SubProjectID" msdata:childkey="SubProjectID" msprop:Generator_UserChildTable="Test_Suite" msprop:Generator_ChildPropName="GetTest_SuiteRows" msprop:Generator_UserRelationName="Sub_ProjectTest_Suite" msprop:Generator_ParentPropName="Sub_ProjectRow" msprop:Generator_RelationVarName="relationSub_ProjectTest_Suite" msprop:Generator_UserParentTable="Sub_Project" />
+      <msdata:Relationship name="TestDataTBugT" msdata:parent="Test_Case" msdata:child="Bug" msdata:parentkey="TestCaseID" msdata:childkey="TestCaseID" msprop:Generator_UserChildTable="Bug" msprop:Generator_ChildPropName="GetBugRows" msprop:Generator_UserRelationName="TestDataTBugT" msprop:Generator_RelationVarName="relationTestDataTBugT" msprop:Generator_UserParentTable="Test_Case" msprop:Generator_ParentPropName="Test_CaseRow" />
+    </xs:appinfo>
+  </xs:annotation>
+</xs:schema>
